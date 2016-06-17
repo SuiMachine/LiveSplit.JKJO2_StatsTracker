@@ -1,73 +1,17 @@
 <updates>
-	<update version="1.2.6">
+    <update version="1.0.1">
         <files>
-            <file path="Components/LiveSplit.MemoryGraph.dll" status="changed"/>
+            <file path="Components/LiveSplit.JKJO2_Tracker.dll" status="changed"/>
         </files>
         <changelog>
-            <change>Fake particles in Sonic Graph, should now use brush specified in settings.</change>
-        </changelog>
-    </update>
-	<update version="1.2.5">
-        <files>
-            <file path="Components/LiveSplit.MemoryGraph.dll" status="changed"/>
-        </files>
-        <changelog>
-            <change>Fixed transitions between walking and idle state.</change>
-        </changelog>
-    </update>
-	<update version="1.2.4">
-        <files>
-            <file path="Components/LiveSplit.MemoryGraph.dll" status="changed"/>
-        </files>
-        <changelog>
-            <change>Added half-speed animation for Sonic.</change>
-			<change>Changed frame drawing order to display fake particles in front (due to transparency issues).</change>
-        </changelog>
-    </update>
-	<update version="1.2.3">
-        <files>
-            <file path="Components/LiveSplit.MemoryGraph.dll" status="changed"/>
-        </files>
-        <changelog>
-            <change>Added Vector Based graph.</change>
-			<change>Are you Sonic?</change>
-        </changelog>
-    </update>
-	<update version="1.2.2">
-        <files>
-            <file path="Components/LiveSplit.MemoryGraph.dll" status="changed"/>
-        </files>
-        <changelog>
-            <change>Fixed graph going out of intended drawing area.</change>
-        </changelog>
-    </update>
-    <update version="1.2.1">
-        <files>
-            <file path="Components/LiveSplit.MemoryGraph.dll" status="changed"/>
-        </files>
-        <changelog>
-            <change>Option to disable Silly colors (related to gradient colors for values over the specified maximum).</change>
-        </changelog>
-    </update>
-    <update version="1.2">
-        <files>
-            <file path="Components/LiveSplit.MemoryGraph.dll" status="changed"/>
-        </files>
-        <changelog>
-            <change>Support for vectors in XZY format (position, height, depth)</change>
-        </changelog>
-    </update>
-    <update version="1.1">
-        <files>
-            <file path="Components/LiveSplit.MemoryGraph.dll" status="changed"/>
-        </files>
-        <changelog>
-            <change>XML list</change>
+            <change>
+			Test
+            </change>
         </changelog>
     </update>
     <update version="1.0">
         <files>
-            <file path="Components/LiveSplit.MemoryGraph.dll" status="changed"/>
+            <file path="Components/LiveSplit.JKJO2_Tracker.dll" status="changed"/>
         </files>
         <changelog>
             <change>

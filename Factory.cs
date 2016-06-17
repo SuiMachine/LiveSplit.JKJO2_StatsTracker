@@ -27,7 +27,7 @@ namespace LiveSplit.MemoryGraph
         }
         public string UpdateURL
         {
-            get { return ""; }
+            get { return "https://raw.githubusercontent.com/SuiMachine/LiveSplit.JKJO2_StatsTracker/master/"; }
         }
         public Version Version
         {
@@ -35,7 +35,7 @@ namespace LiveSplit.MemoryGraph
         }
         public string XMLURL
         {
-            get { return UpdateURL + "Components/update.LiveSplit.MemoryGraph.xml"; }
+            get { return UpdateURL + "Components/update.LiveSplit.JKJO2_Tracker.xml"; }
         }
     }
 }
