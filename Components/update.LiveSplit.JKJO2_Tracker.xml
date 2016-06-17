@@ -1,22 +1,10 @@
 <updates>
-    <update version="1.0.1">
-        <files>
-            <file path="Components/LiveSplit.JKJO2_Tracker.dll" status="changed"/>
-        </files>
-        <changelog>
-            <change>
-			Test
-            </change>
-        </changelog>
-    </update>
     <update version="1.0">
         <files>
             <file path="Components/LiveSplit.JKJO2_Tracker.dll" status="changed"/>
         </files>
         <changelog>
-            <change>
-                Initial release.
-            </change>
+            <change>Initial release.</change>
         </changelog>
     </update>
 </updates>
