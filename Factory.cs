@@ -1,7 +1,7 @@
 ﻿using LiveSplit.UI.Components;
 using System;
 
-namespace LiveSplit.MemoryGraph
+namespace LiveSplit.JKJO2
 {
     public class Factory : IComponentFactory
     {

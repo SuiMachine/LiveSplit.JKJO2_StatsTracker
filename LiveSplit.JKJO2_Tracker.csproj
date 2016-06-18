@@ -7,7 +7,7 @@
     <ProjectGuid>{EC265AD9-9429-42CE-B27B-F45132029F38}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LiveSplit.JKJO2_Tracker</RootNamespace>
+    <RootNamespace>LiveSplit.JKJO2</RootNamespace>
     <AssemblyName>LiveSplit.JKJO2_Tracker</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

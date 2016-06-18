@@ -9,7 +9,7 @@ using System.Globalization;
 using System.Windows.Forms;
 using System.Collections.Generic;
 
-namespace LiveSplit.MemoryGraph
+namespace LiveSplit.JKJO2
 {
     enum elementType
     {

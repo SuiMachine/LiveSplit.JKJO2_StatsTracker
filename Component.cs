@@ -8,7 +8,7 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Diagnostics;
 
-namespace LiveSplit.MemoryGraph
+namespace LiveSplit.JKJO2
 {
     public class Component : IComponent
     {
@@ -206,32 +206,31 @@ namespace LiveSplit.MemoryGraph
             {
                 DrawElementInTracker(field1DisplayMode, g, font, fontBrush, x, y, rect.Width, yDifference);
                 y += 24;
-                g.FillRectangle(seperatorBrush, 0, y, width, 1);
-
             }
             if(field2Enabled)
             {
+                g.FillRectangle(seperatorBrush, 0, y, width, 1);
                 DrawElementInTracker(field2DisplayMode, g, font, fontBrush, x, y, rect.Width, yDifference);
                 y += 24;
-                g.FillRectangle(seperatorBrush, 0, y, width, 1);
             }
             if (field3Enabled)
             {
+                g.FillRectangle(seperatorBrush, 0, y, width, 1);
                 DrawElementInTracker(field3DisplayMode, g, font, fontBrush, x, y, rect.Width, yDifference);
                 y += 24;
-                g.FillRectangle(seperatorBrush, 0, y, width, 1);
+
             }
             if (field4Enabled)
             {
+                g.FillRectangle(seperatorBrush, 0, y, width, 1);
                 DrawElementInTracker(field4DisplayMode, g, font, fontBrush, x, y, rect.Width, yDifference);
                 y += 24;
-                g.FillRectangle(seperatorBrush, 0, y, width, 1);
             }
             if (field5Enabled)
             {
+                g.FillRectangle(seperatorBrush, 0, y, width, 1);
                 DrawElementInTracker(field5DisplayMode, g, font, fontBrush, x, y, rect.Width, yDifference);
                 y += 24;
-                g.FillRectangle(seperatorBrush, 0, y, width, 1);
             }
 
             // draw value text

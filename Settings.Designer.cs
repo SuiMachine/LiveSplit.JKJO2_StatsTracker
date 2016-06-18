@@ -3,7 +3,7 @@ using System;
 using System.ComponentModel;
 using System.Linq;
 
-namespace LiveSplit.MemoryGraph
+namespace LiveSplit.JKJO2
 {
     partial class Settings
     {
