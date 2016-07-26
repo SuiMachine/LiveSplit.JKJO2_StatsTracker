@@ -37,6 +37,8 @@ namespace LiveSplit.JKJO2
         private int v_shotsFired;
         private int v_shotsHit;
         private int v_enemiesKilled;
+        private int v_comFPS;
+        private int v_svFPS;
 
         private int numberofDisplayedElements = 0;
         private int field1DisplayMode = 0;
@@ -204,47 +206,64 @@ namespace LiveSplit.JKJO2
 
             if (field1Enabled)
             {
-                DrawElementInTracker(field1DisplayMode, g, font, fontBrush, x, y, rect.Width, yDifference);
+                DrawElementInTracker(field1DisplayMode, g, font, fontBrush, seperatorBrush, x, y, rect.Width, yDifference);
                 y += 24;
             }
             if(field2Enabled)
             {
                 g.FillRectangle(seperatorBrush, 0, y, width, 1);
-                DrawElementInTracker(field2DisplayMode, g, font, fontBrush, x, y, rect.Width, yDifference);
+                DrawElementInTracker(field2DisplayMode, g, font, fontBrush, seperatorBrush, x, y, rect.Width, yDifference);
                 y += 24;
             }
             if (field3Enabled)
             {
                 g.FillRectangle(seperatorBrush, 0, y, width, 1);
-                DrawElementInTracker(field3DisplayMode, g, font, fontBrush, x, y, rect.Width, yDifference);
+                DrawElementInTracker(field3DisplayMode, g, font, fontBrush, seperatorBrush, x, y, rect.Width, yDifference);
                 y += 24;
 
             }
             if (field4Enabled)
             {
                 g.FillRectangle(seperatorBrush, 0, y, width, 1);
-                DrawElementInTracker(field4DisplayMode, g, font, fontBrush, x, y, rect.Width, yDifference);
+                DrawElementInTracker(field4DisplayMode, g, font, fontBrush, seperatorBrush, x, y, rect.Width, yDifference);
                 y += 24;
             }
             if (field5Enabled)
             {
                 g.FillRectangle(seperatorBrush, 0, y, width, 1);
-                DrawElementInTracker(field5DisplayMode, g, font, fontBrush, x, y, rect.Width, yDifference);
+                DrawElementInTracker(field5DisplayMode, g, font, fontBrush, seperatorBrush, x, y, rect.Width, yDifference);
                 y += 24;
             }
 
             // draw value text
         }
 
-        private void DrawElementInTracker(int DisplayMode, Graphics g, Font font, Brush brush, float x, float y, float width, float height)
+        private void DrawElementInTracker(int DisplayMode, Graphics g, Font font, Brush fontBrush, Brush seperatorBrush, float x, float y, float width, float height)
         {
             switch(DisplayMode)
             {
+                case (int)elementType.FPS:
+                    g.DrawString("COM FPS: ", font, fontBrush, new RectangleF(x, y, width, height), descriptiveTextFormat);
+
+                    if(v_comFPS <= 125)
+                        g.DrawString(v_comFPS.ToString(), font, new SolidBrush(Color.Green), new RectangleF(x, y, width / 2-5, height), valueTextFormat);
+                    else
+                        g.DrawString(v_comFPS.ToString(), font, new SolidBrush(Color.Red), new RectangleF(x, y, width / 2-5, height), valueTextFormat);
+
+                    g.FillRectangle(seperatorBrush, width / 2+2, 0, 2, height);
+
+                    g.DrawString("SV FPS: ", font, fontBrush, new RectangleF(width/2+5, y, width, height), descriptiveTextFormat);
+                    if (v_svFPS == 20)
+                        g.DrawString(v_svFPS.ToString(), font, new SolidBrush(Color.Green), new RectangleF(x, y, width, height), valueTextFormat);
+                    else
+                        g.DrawString(v_svFPS.ToString(), font, new SolidBrush(Color.Red), new RectangleF(x, y, width, height), valueTextFormat);
+
+                    break;
                 case (int)elementType.Secrets:
                     if (BGCompletedOpacity != 0 && v_SecretsFound == v_maxSecrets)
                         g.FillRectangle(BackgroundColorCompleted, x, y, width, height);
 
-                    g.DrawString("Secrets found:", font, brush, new RectangleF(x, y, width, height), descriptiveTextFormat);
+                    g.DrawString("Secrets found:", font, fontBrush, new RectangleF(x, y, width, height), descriptiveTextFormat);
                     if (CompletedColorEnabled)
                     {
                         if(v_SecretsFound != v_maxSecrets)
@@ -253,32 +272,32 @@ namespace LiveSplit.JKJO2
                             g.DrawString(v_SecretsFound.ToString() + " / " + v_maxSecrets.ToString(), font, ComplitionColorCompleted, new RectangleF(x, y, width, height), valueTextFormat);
                     }
                     else
-                        g.DrawString(v_SecretsFound.ToString() + " / " + v_maxSecrets.ToString(), font, brush, new RectangleF(x, y, width, height), valueTextFormat);
+                        g.DrawString(v_SecretsFound.ToString() + " / " + v_maxSecrets.ToString(), font, fontBrush, new RectangleF(x, y, width, height), valueTextFormat);
 
 
                     break;
                 case (int)elementType.Accuracy:
-                    g.DrawString("Accuracy:", font, brush, new RectangleF(x, y, width, height), descriptiveTextFormat);
+                    g.DrawString("Accuracy:", font, fontBrush, new RectangleF(x, y, width, height), descriptiveTextFormat);
                     if(v_shotsFired > 0)
-                        g.DrawString((v_shotsHit/(v_shotsFired*1.0f)*100).ToString("0.00") + " %", font, brush, new RectangleF(x, y, width, height), valueTextFormat);
+                        g.DrawString((v_shotsHit/(v_shotsFired*1.0f)*100).ToString("0.00") + " %", font, fontBrush, new RectangleF(x, y, width, height), valueTextFormat);
                     else
-                        g.DrawString("∞", font, brush, new RectangleF(x, y, width, height), valueTextFormat);
+                        g.DrawString("∞", font, fontBrush, new RectangleF(x, y, width, height), valueTextFormat);
                     break;
                 case (int)elementType.EnemiesHit:
-                    g.DrawString("Shots hit:", font, brush, new RectangleF(x, y, width, height), descriptiveTextFormat);
-                    g.DrawString(v_shotsHit.ToString(), font, brush, new RectangleF(x, y, width, height), valueTextFormat);
+                    g.DrawString("Shots hit:", font, fontBrush, new RectangleF(x, y, width, height), descriptiveTextFormat);
+                    g.DrawString(v_shotsHit.ToString(), font, fontBrush, new RectangleF(x, y, width, height), valueTextFormat);
                     break;
                 case (int)elementType.EnemiesKilled:
-                    g.DrawString("Enemies killed:", font, brush, new RectangleF(x, y, width, height), descriptiveTextFormat);
-                    g.DrawString(v_enemiesKilled.ToString(), font, brush, new RectangleF(x, y, width, height), valueTextFormat);
+                    g.DrawString("Enemies killed:", font, fontBrush, new RectangleF(x, y, width, height), descriptiveTextFormat);
+                    g.DrawString(v_enemiesKilled.ToString(), font, fontBrush, new RectangleF(x, y, width, height), valueTextFormat);
                     break;
                 case (int)elementType.ShotsFired:
-                    g.DrawString("Shots fired:", font, brush, new RectangleF(x, y, width, height), descriptiveTextFormat);
-                    g.DrawString(v_shotsFired.ToString(), font, brush, new RectangleF(x, y, width, height), valueTextFormat);
+                    g.DrawString("Shots fired:", font, fontBrush, new RectangleF(x, y, width, height), descriptiveTextFormat);
+                    g.DrawString(v_shotsFired.ToString(), font, fontBrush, new RectangleF(x, y, width, height), valueTextFormat);
                     break;
                 case (int)elementType.HitToFiredRatio:
-                    g.DrawString("Hit / Fired:", font, brush, new RectangleF(x, y, width, height), descriptiveTextFormat);
-                    g.DrawString(v_shotsHit + " / " + v_shotsFired, font, brush, new RectangleF(x, y, width, height), valueTextFormat);
+                    g.DrawString("Hit / Fired:", font, fontBrush, new RectangleF(x, y, width, height), descriptiveTextFormat);
+                    g.DrawString(v_shotsHit + " / " + v_shotsFired, font, fontBrush, new RectangleF(x, y, width, height), valueTextFormat);
                     break;
             }
         }
@@ -314,6 +333,8 @@ namespace LiveSplit.JKJO2
                 v_enemiesKilled = settings.p_levelKills.Deref<int>(process);
                 v_shotsFired = settings.p_shotsFired.Deref<int>(process);
                 v_shotsHit = settings.p_shotsHit.Deref<int>(process);
+                v_comFPS = settings.p_comFPS.Deref<int>(process);
+                v_svFPS = settings.p_svFPS.Deref<int>(process);
 
                 if (invalidator != null)
                 {

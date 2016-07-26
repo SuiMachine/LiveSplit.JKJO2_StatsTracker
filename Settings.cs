@@ -13,6 +13,8 @@ namespace LiveSplit.JKJO2
 {
     enum elementType
     {
+        [Description("COM FPS / SV FPS")]
+        FPS,
         [Description("Secrets")]
         Secrets,
         [Description("Enemies Killed")]
@@ -48,6 +50,9 @@ namespace LiveSplit.JKJO2
         public DeepPointer p_maxKills { get; set; }
         public DeepPointer p_shotsFired { get; set; }
         public DeepPointer p_shotsHit { get; set; }
+        public DeepPointer p_comFPS { get; set; }
+        public DeepPointer p_svFPS { get; set; }
+
 
         public bool field1Enabled { get; set; }
         public bool field2Enabled { get; set; }
@@ -138,6 +143,8 @@ namespace LiveSplit.JKJO2
             p_maxKills = null;
             p_shotsFired = new DeepPointer("jk2gamex86.dll", 0x0026CDD4, 0x6c8);
             p_shotsHit = new DeepPointer("jk2gamex86.dll", 0x0026CDD4, 0x6cc);
+            p_comFPS = new DeepPointer(0x6973F0);
+            p_svFPS = new DeepPointer(0x698958);
         }
 
         private void ColorButtonClick(object sender, EventArgs e)

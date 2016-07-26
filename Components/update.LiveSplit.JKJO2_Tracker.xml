@@ -1,4 +1,12 @@
 <updates>
+    <update version="1.0.3">
+        <files>
+            <file path="Components/LiveSplit.JKJO2_Tracker.dll" status="changed"/>
+        </files>
+        <changelog>
+            <change>Added display COM FPS / SV FPS.</change>
+        </changelog>
+    </update>
     <update version="1.0.2">
         <files>
             <file path="Components/LiveSplit.JKJO2_Tracker.dll" status="changed"/>
