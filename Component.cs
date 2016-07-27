@@ -63,6 +63,7 @@ namespace LiveSplit.JKJO2
         private Brush BGBrush;
         private byte BGBrushOpacity;
         private Brush BackgroundColorCompleted;
+        private Brush NonDefaultColorBrush;
         private byte BGCompletedOpacity;
 
         private bool CompletedColorEnabled = false;
@@ -107,6 +108,7 @@ namespace LiveSplit.JKJO2
             BackgroundColorCompleted = new SolidBrush(settings.BackgroundColorCompleted);
             BGCompletedOpacity = settings.BackgroundColorCompleted.A;
             OverrideTextColor = settings.OverrideTextColor;
+            NonDefaultColorBrush = new SolidBrush(settings.NonDefaultValueColor);
             ComplitionColorIncomplete = new SolidBrush(settings.ComplitionColorIncomplete);
             ComplitionColorCompleted = new SolidBrush(settings.ComplitionColorCompleted);
             BGBrush = new SolidBrush(settings.BackgroundColor);
@@ -245,18 +247,18 @@ namespace LiveSplit.JKJO2
                 case (int)elementType.FPS:
                     g.DrawString("COM FPS: ", font, fontBrush, new RectangleF(x, y, width, height), descriptiveTextFormat);
 
-                    if(v_comFPS <= 125)
-                        g.DrawString(v_comFPS.ToString(), font, new SolidBrush(Color.Green), new RectangleF(x, y, width / 2-5, height), valueTextFormat);
+                    if(v_comFPS == 85)
+                        g.DrawString(v_comFPS.ToString(), font, fontBrush, new RectangleF(x, y, width / 2-5, height), valueTextFormat);
                     else
-                        g.DrawString(v_comFPS.ToString(), font, new SolidBrush(Color.Red), new RectangleF(x, y, width / 2-5, height), valueTextFormat);
+                        g.DrawString(v_comFPS.ToString(), font, NonDefaultColorBrush, new RectangleF(x, y, width / 2-5, height), valueTextFormat);
 
                     g.FillRectangle(seperatorBrush, width / 2+2, 0, 2, height);
 
                     g.DrawString("SV FPS: ", font, fontBrush, new RectangleF(width/2+5, y, width, height), descriptiveTextFormat);
                     if (v_svFPS == 20)
-                        g.DrawString(v_svFPS.ToString(), font, new SolidBrush(Color.Green), new RectangleF(x, y, width, height), valueTextFormat);
+                        g.DrawString(v_svFPS.ToString(), font, fontBrush, new RectangleF(x, y, width, height), valueTextFormat);
                     else
-                        g.DrawString(v_svFPS.ToString(), font, new SolidBrush(Color.Red), new RectangleF(x, y, width, height), valueTextFormat);
+                        g.DrawString(v_svFPS.ToString(), font, NonDefaultColorBrush, new RectangleF(x, y, width, height), valueTextFormat);
 
                     break;
                 case (int)elementType.Secrets:

@@ -34,6 +34,7 @@ namespace LiveSplit.JKJO2
         #region Properties
         public Color BackgroundColor { get; set; }
         public Color BackgroundColorCompleted { get; set; }
+        public Color NonDefaultValueColor { get; set; }
 
         public Color OverrideTextColor { get; set; }
         public Color ComplitionColorIncomplete { get; set; }
@@ -86,6 +87,7 @@ namespace LiveSplit.JKJO2
             btnOverrideTextColor.DataBindings.Add("BackColor", this, "OverrideTextColor", false, DataSourceUpdateMode.OnPropertyChanged);
             btnColorIncompleted.DataBindings.Add("BackColor", this, "ComplitionColorIncomplete", false, DataSourceUpdateMode.OnPropertyChanged);
             btnColorCompleted.DataBindings.Add("BackColor", this, "ComplitionColorCompleted", false, DataSourceUpdateMode.OnPropertyChanged);
+            btnNonDefaultColor.DataBindings.Add("BackColor", this, "NonDefaultValueColor", false, DataSourceUpdateMode.OnPropertyChanged);
 
             //Checkboxes
             CB_EnableCompletedColor.DataBindings.Add("Checked", this, "fieldCompletionColorsEnabled", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -108,7 +110,6 @@ namespace LiveSplit.JKJO2
             CB_Field5.DataBindings.Add("Enabled", this, "field5Enabled", false, DataSourceUpdateMode.OnPropertyChanged);
 
             AddComboboxDataSources();
-
         }
 
         private void setStartValues()
@@ -132,6 +133,7 @@ namespace LiveSplit.JKJO2
             OverrideTextColor = Color.White;
             ComplitionColorIncomplete = Color.White;
             ComplitionColorCompleted = Color.White;
+            NonDefaultValueColor = Color.Red;
         }
 
         private void setAdresses()
@@ -144,7 +146,7 @@ namespace LiveSplit.JKJO2
             p_shotsFired = new DeepPointer("jk2gamex86.dll", 0x0026CDD4, 0x6c8);
             p_shotsHit = new DeepPointer("jk2gamex86.dll", 0x0026CDD4, 0x6cc);
             p_comFPS = new DeepPointer(0x00694F30, 0x20);
-            p_svFPS = new DeepPointer(0x698958);
+            p_svFPS = new DeepPointer(0x00698984, 0x20);
         }
 
         private void ColorButtonClick(object sender, EventArgs e)
@@ -173,6 +175,8 @@ namespace LiveSplit.JKJO2
 
             BackgroundColor = SettingsHelper.ParseColor(element["BackgroundColor"]);
             BackgroundColorCompleted = SettingsHelper.ParseColor(element["BackgroundColorCompleted"]);
+            NonDefaultValueColor = SettingsHelper.ParseColor(element["NonDefaultColor"]);
+
             OverrideTextColor = SettingsHelper.ParseColor(element["OverrideTextColor"]);
             ComplitionColorIncomplete = SettingsHelper.ParseColor(element["ComplitionColorIncomplete"]);
             ComplitionColorCompleted = SettingsHelper.ParseColor(element["ComplitionColorCompleted"]);
@@ -211,6 +215,7 @@ namespace LiveSplit.JKJO2
             SettingsHelper.CreateSetting(document, parent, "BackgroundColorCompleted", BackgroundColorCompleted) ^
             SettingsHelper.CreateSetting(document, parent, "OverrideTextColor", OverrideTextColor) ^
             SettingsHelper.CreateSetting(document, parent, "ComplitionColorIncomplete", ComplitionColorIncomplete) ^
+            SettingsHelper.CreateSetting(document, parent, "NonDefaultColor", NonDefaultValueColor) ^
             SettingsHelper.CreateSetting(document, parent, "ComplitionColorCompleted", ComplitionColorCompleted);
         }
     }

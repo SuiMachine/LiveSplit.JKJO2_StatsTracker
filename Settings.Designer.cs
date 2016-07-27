@@ -49,16 +49,18 @@ namespace LiveSplit.JKJO2
             this.grpGraph = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnColorIncompleted = new System.Windows.Forms.Button();
+            this.btnBackgroundColorCompleted = new System.Windows.Forms.Button();
+            this.btnOverrideTextColor = new System.Windows.Forms.Button();
             this.btnBackgroundColor1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.CB_OverrideTextColorEnabled = new System.Windows.Forms.CheckBox();
-            this.CB_EnableCompletedColor = new System.Windows.Forms.CheckBox();
-            this.btnOverrideTextColor = new System.Windows.Forms.Button();
-            this.btnBackgroundColorCompleted = new System.Windows.Forms.Button();
+            this.btnColorIncompleted = new System.Windows.Forms.Button();
             this.btnColorCompleted = new System.Windows.Forms.Button();
+            this.CB_EnableCompletedColor = new System.Windows.Forms.CheckBox();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnNonDefaultColor = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.grpPointerPath.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -234,12 +236,13 @@ namespace LiveSplit.JKJO2
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 6;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel4.Controls.Add(this.label1, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.btnBackgroundColorCompleted, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.btnOverrideTextColor, 5, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnBackgroundColor1, 1, 0);
@@ -249,33 +252,46 @@ namespace LiveSplit.JKJO2
             this.tableLayoutPanel4.Controls.Add(this.btnColorIncompleted, 4, 1);
             this.tableLayoutPanel4.Controls.Add(this.btnColorCompleted, 4, 1);
             this.tableLayoutPanel4.Controls.Add(this.CB_EnableCompletedColor, 3, 1);
+            this.tableLayoutPanel4.Controls.Add(this.btnNonDefaultColor, 1, 2);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(443, 62);
+            this.tableLayoutPanel4.RowCount = 3;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(443, 85);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
-            // btnColorIncompleted
+            // btnBackgroundColorCompleted
             // 
-            this.btnColorIncompleted.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnColorIncompleted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnColorIncompleted.Location = new System.Drawing.Point(378, 34);
-            this.btnColorIncompleted.Name = "btnColorIncompleted";
-            this.btnColorIncompleted.Size = new System.Drawing.Size(29, 25);
-            this.btnColorIncompleted.TabIndex = 9;
-            this.btnColorIncompleted.UseVisualStyleBackColor = false;
-            this.btnColorIncompleted.Click += new System.EventHandler(this.ColorButtonClick);
+            this.btnBackgroundColorCompleted.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBackgroundColorCompleted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackgroundColorCompleted.Location = new System.Drawing.Point(135, 31);
+            this.btnBackgroundColorCompleted.Name = "btnBackgroundColorCompleted";
+            this.btnBackgroundColorCompleted.Size = new System.Drawing.Size(28, 22);
+            this.btnBackgroundColorCompleted.TabIndex = 14;
+            this.btnBackgroundColorCompleted.UseVisualStyleBackColor = false;
+            this.btnBackgroundColorCompleted.Click += new System.EventHandler(this.ColorButtonClick);
+            // 
+            // btnOverrideTextColor
+            // 
+            this.btnOverrideTextColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnOverrideTextColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOverrideTextColor.Location = new System.Drawing.Point(413, 3);
+            this.btnOverrideTextColor.Name = "btnOverrideTextColor";
+            this.btnOverrideTextColor.Size = new System.Drawing.Size(29, 22);
+            this.btnOverrideTextColor.TabIndex = 13;
+            this.btnOverrideTextColor.UseVisualStyleBackColor = false;
+            this.btnOverrideTextColor.Click += new System.EventHandler(this.ColorButtonClick);
             // 
             // btnBackgroundColor1
             // 
             this.btnBackgroundColor1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnBackgroundColor1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackgroundColor1.Location = new System.Drawing.Point(105, 3);
+            this.btnBackgroundColor1.Location = new System.Drawing.Point(135, 3);
             this.btnBackgroundColor1.Name = "btnBackgroundColor1";
-            this.btnBackgroundColor1.Size = new System.Drawing.Size(29, 25);
+            this.btnBackgroundColor1.Size = new System.Drawing.Size(28, 22);
             this.btnBackgroundColor1.TabIndex = 6;
             this.btnBackgroundColor1.UseVisualStyleBackColor = false;
             this.btnBackgroundColor1.Click += new System.EventHandler(this.ColorButtonClick);
@@ -284,7 +300,7 @@ namespace LiveSplit.JKJO2
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 9);
+            this.label3.Location = new System.Drawing.Point(3, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 13);
             this.label3.TabIndex = 7;
@@ -294,7 +310,7 @@ namespace LiveSplit.JKJO2
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 40);
+            this.label4.Location = new System.Drawing.Point(3, 35);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 13);
             this.label4.TabIndex = 8;
@@ -304,56 +320,67 @@ namespace LiveSplit.JKJO2
             // 
             this.CB_OverrideTextColorEnabled.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.CB_OverrideTextColorEnabled.AutoSize = true;
-            this.CB_OverrideTextColorEnabled.Location = new System.Drawing.Point(219, 7);
+            this.CB_OverrideTextColorEnabled.Location = new System.Drawing.Point(219, 5);
             this.CB_OverrideTextColorEnabled.Name = "CB_OverrideTextColorEnabled";
             this.CB_OverrideTextColorEnabled.Size = new System.Drawing.Size(117, 17);
             this.CB_OverrideTextColorEnabled.TabIndex = 10;
             this.CB_OverrideTextColorEnabled.Text = "Override Text Color";
             this.CB_OverrideTextColorEnabled.UseVisualStyleBackColor = true;
             // 
+            // btnColorIncompleted
+            // 
+            this.btnColorIncompleted.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnColorIncompleted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnColorIncompleted.Location = new System.Drawing.Point(413, 31);
+            this.btnColorIncompleted.Name = "btnColorIncompleted";
+            this.btnColorIncompleted.Size = new System.Drawing.Size(29, 22);
+            this.btnColorIncompleted.TabIndex = 9;
+            this.btnColorIncompleted.UseVisualStyleBackColor = false;
+            this.btnColorIncompleted.Click += new System.EventHandler(this.ColorButtonClick);
+            // 
+            // btnColorCompleted
+            // 
+            this.btnColorCompleted.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnColorCompleted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnColorCompleted.Location = new System.Drawing.Point(378, 31);
+            this.btnColorCompleted.Name = "btnColorCompleted";
+            this.btnColorCompleted.Size = new System.Drawing.Size(29, 22);
+            this.btnColorCompleted.TabIndex = 15;
+            this.btnColorCompleted.UseVisualStyleBackColor = false;
+            this.btnColorCompleted.Click += new System.EventHandler(this.ColorButtonClick);
+            // 
             // CB_EnableCompletedColor
             // 
             this.CB_EnableCompletedColor.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.CB_EnableCompletedColor.AutoSize = true;
-            this.CB_EnableCompletedColor.Location = new System.Drawing.Point(219, 38);
+            this.CB_EnableCompletedColor.Location = new System.Drawing.Point(219, 33);
             this.CB_EnableCompletedColor.Name = "CB_EnableCompletedColor";
             this.CB_EnableCompletedColor.Size = new System.Drawing.Size(149, 17);
             this.CB_EnableCompletedColor.TabIndex = 11;
             this.CB_EnableCompletedColor.Text = "Enable \"Completed Color\"";
             this.CB_EnableCompletedColor.UseVisualStyleBackColor = true;
             // 
-            // btnOverrideTextColor
+            // label1
             // 
-            this.btnOverrideTextColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnOverrideTextColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOverrideTextColor.Location = new System.Drawing.Point(413, 3);
-            this.btnOverrideTextColor.Name = "btnOverrideTextColor";
-            this.btnOverrideTextColor.Size = new System.Drawing.Size(29, 25);
-            this.btnOverrideTextColor.TabIndex = 13;
-            this.btnOverrideTextColor.UseVisualStyleBackColor = false;
-            this.btnOverrideTextColor.Click += new System.EventHandler(this.ColorButtonClick);
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(124, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Non-Default Value Color:";
             // 
-            // btnBackgroundColorCompleted
+            // btnNonDefaultColor
             // 
-            this.btnBackgroundColorCompleted.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBackgroundColorCompleted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackgroundColorCompleted.Location = new System.Drawing.Point(105, 34);
-            this.btnBackgroundColorCompleted.Name = "btnBackgroundColorCompleted";
-            this.btnBackgroundColorCompleted.Size = new System.Drawing.Size(29, 25);
-            this.btnBackgroundColorCompleted.TabIndex = 14;
-            this.btnBackgroundColorCompleted.UseVisualStyleBackColor = false;
-            this.btnBackgroundColorCompleted.Click += new System.EventHandler(this.ColorButtonClick);
-            // 
-            // btnColorCompleted
-            // 
-            this.btnColorCompleted.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnColorCompleted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnColorCompleted.Location = new System.Drawing.Point(413, 34);
-            this.btnColorCompleted.Name = "btnColorCompleted";
-            this.btnColorCompleted.Size = new System.Drawing.Size(29, 25);
-            this.btnColorCompleted.TabIndex = 15;
-            this.btnColorCompleted.UseVisualStyleBackColor = false;
-            this.btnColorCompleted.Click += new System.EventHandler(this.ColorButtonClick);
+            this.btnNonDefaultColor.BackColor = System.Drawing.Color.Red;
+            this.btnNonDefaultColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNonDefaultColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNonDefaultColor.Location = new System.Drawing.Point(135, 59);
+            this.btnNonDefaultColor.Name = "btnNonDefaultColor";
+            this.btnNonDefaultColor.Size = new System.Drawing.Size(28, 23);
+            this.btnNonDefaultColor.TabIndex = 17;
+            this.btnNonDefaultColor.UseVisualStyleBackColor = false;
+            this.btnNonDefaultColor.Click += new System.EventHandler(this.ColorButtonClick);
             // 
             // Settings
             // 
@@ -452,5 +479,7 @@ namespace LiveSplit.JKJO2
         private System.Windows.Forms.Button btnBackgroundColorCompleted;
         private System.Windows.Forms.Button btnOverrideTextColor;
         private System.Windows.Forms.Button btnColorCompleted;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnNonDefaultColor;
     }
 }

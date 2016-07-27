@@ -1,4 +1,12 @@
 <updates>
+    <update version="1.0.5">
+        <files>
+            <file path="Components/LiveSplit.JKJO2_Tracker.dll" status="changed"/>
+        </files>
+        <changelog>
+            <change>Use pointer for SV_FPS.</change>
+        </changelog>
+    </update>
     <update version="1.0.4">
         <files>
             <file path="Components/LiveSplit.JKJO2_Tracker.dll" status="changed"/>
