@@ -146,7 +146,7 @@ namespace LiveSplit.JKJO2
             p_shotsFired = new DeepPointer("jk2gamex86.dll", 0x0026CDD4, 0x6c8);
             p_shotsHit = new DeepPointer("jk2gamex86.dll", 0x0026CDD4, 0x6cc);
             p_comFPS = new DeepPointer(0x00694F30, 0x20);
-            p_svFPS = new DeepPointer(0x00698984, 0x20);
+            p_svFPS = new DeepPointer(0x00E7CF4C, 0x20);
         }
 
         private void ColorButtonClick(object sender, EventArgs e)
